@@ -2,7 +2,7 @@
 - 👀 I’m interested in learn
 - 🌱 I’m currently learning python
 - 💞️ I’m looking to collaborate on bad bunny
-- 📫 How to reach me gmail: luijian948@gmail.com
+- 📫 How to reach me gmail: luisjian948@gmail.com
 
 <!---
 LuisJimenez19/LuisJimenez19 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
