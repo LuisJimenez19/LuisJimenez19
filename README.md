@@ -1,6 +1,6 @@
  # **👋 Hola, soy Luis**
  ![readme-github2](https://github.com/LuisJimenez19/LuisJimenez19/assets/102745510/f3287ee1-5572-4ec4-a573-ee86d5a169c5)
-Soy un desarrollador web apasionado por construir sitios web con un diseño atractivo y una experiencia de usuario excepcional. Entre las herramientas con las que más disfruto trabajar estan tecnologías como ReactJS, Tailwind CSS + ViteJS y el stack MERN (MySQL, Express, React, Node.js). También he trabajado con Laravel e InertiaJS. Me emociona ver cómo la tendencia actual de unificar el desarrollo backend y frontend resalta la importancia de cada área.  
+Soy un desarrollador web apasionado por construir sitios web con un diseño atractivo y una buena experiencia de usuario. Entre las herramientas con las que más disfruto trabajar estan tecnologías como ReactJS, Tailwind CSS + ViteJS y el stack MERN (MySQL, Express, React, Node.js). También he trabajado con Laravel e InertiaJS. Me emociona ver cómo la tendencia actual de unificar el desarrollo backend y frontend resalta la importancia de cada área.  
 te dejo un simple portafolio de [desafios](https://luisjimenez19.github.io/desafios-frontend-mentor/) de frontend mentor.
 
 
