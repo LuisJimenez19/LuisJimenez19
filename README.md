@@ -5,7 +5,7 @@ te dejo un simple portafolio de [desafios](https://luisjimenez19.github.io/desaf
 
 
 ## **Puedes encontrarme en internet**🌐  
-compartiendo mi rutina en [twitch](https://www.twitch.tv/luisangeljn19)✍🏽  
+
 resolviendo desafios en [frontend mentor](https://www.frontendmentor.io/profile/LuisJimenez19)💯  
 
 ¡Gracias por revisar mi perfil! Si tienes alguna pregunta o deseas colaborar en proyectos interesantes, no dudes en contactarme.
