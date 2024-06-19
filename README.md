@@ -3,11 +3,24 @@ Soy un desarrollador web apasionado por construir sitios web con un diseño atra
 
 
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=luisjimenez19&show_icons=true&locale=en&layout=compact" alt="luisjimenez19" /></p>
+<section style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+  <div>
+    <img width="500px" src="https://github-readme-stats.vercel.app/api?username=luisjimenez19&show_icons=true&locale=es&theme=dracula&layout=compact" alt="luisjimenez19" />
+  </div>
+  <div>
+    <img width="500px" src="https://github-readme-streak-stats.herokuapp.com?user=luisjimenez19&locale=es&theme=dracula&layout=compact" alt="luisjimenez19" />
+  </div>
+  <div>
+    <img width="500px" src="https://github-readme-stats.vercel.app/api/top-langs?username=luisjimenez19&show_icons=true&locale=es&layout=compact&theme=dracula" alt="luisjimenez19" />
+  </div>
+</section>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=luisjimenez19&show_icons=true&locale=en" alt="luisjimenez19" /></p>
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=luisjimenez19&" alt="luisjimenez19" /></p>
+
+
+
+
+
 
 
 
@@ -18,7 +31,7 @@ Soy un desarrollador web apasionado por construir sitios web con un diseño atra
 - Aportando en [Linkedin](https://www.linkedin.com/in/luis-jimenez19/) 
 
 ### Te comparto;
-- Mi [portafolio web](https://angeljimenez.netlify.app/) ♥ <br>
+- Mi [portafolio web](https://www.luis-dev.pro/) ♥ <br>
 - Un simple portafolio de [desafios](https://luisjimenez19.github.io/desafios-frontend-mentor/) de frontend mentor.
 
 ¡Gracias por revisar mi perfil! Si tienes alguna pregunta o deseas colaborar en proyectos interesantes, no dudes en contactarme.
