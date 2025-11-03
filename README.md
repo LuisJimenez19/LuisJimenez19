@@ -41,3 +41,6 @@ Soy un desarrollador web apasionado por construir sitios web con un diseño atra
 LuisJimenez19/LuisJimenez19 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
+
+
+const validNameRegex = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+(?: [A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)*$/;
