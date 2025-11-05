@@ -46,3 +46,19 @@ You can click the Preview link to take a look at your changes.
 const validNameRegex = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+(?: [A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)*$/;
 
 "withoutSpecialChars": /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]+$/,
+
+
+    if (attribute != null && value != null) {
+        users = users.stream()
+            .filter(u -> {
+                switch (attribute) {
+                    case "username":
+                        return u.getUsername() != null && u.getUsername().toLowerCase().contains(value.toLowerCase());
+                    case "email":
+                        return u.getEmail() != null && u.getEmail().toLowerCase().contains(value.toLowerCase());
+                    default:
+                        return false;
+                }
+            })
+            .toList();
+    }
