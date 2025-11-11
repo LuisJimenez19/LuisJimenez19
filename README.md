@@ -118,3 +118,27 @@ inglés
   "future_date": "The {{field}} must be a future date.",
   "past_date": "The {{field}} must be a past date."
 }
+
+
+
+resources.ts
+
+// src/i18n/resources.ts
+type LocaleResources = Record<string, Record<string, any>>;
+
+export const loadResources = (): LocaleResources => {
+  const modules = import.meta.glob('./locales/**/*.json', { eager: true });
+  const resources: LocaleResources = {};
+
+  for (const path in modules) {
+    // Ejemplo: ./locales/es/common.json → [ 'es', 'common' ]
+    const parts = path.split('/');
+    const lang = parts[2];
+    const ns = parts[3].replace('.json', '');
+
+    if (!resources[lang]) resources[lang] = {};
+    resources[lang][ns] = (modules[path] as any).default;
+  }
+
+  return resources;
+};
