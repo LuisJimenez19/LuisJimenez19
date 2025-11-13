@@ -877,3 +877,145 @@ Cada rol tiene acciones específicas según su tipo:
 ];
 
 ```
+
+
+
+### client scopes
+
+```
+<h1 data-tour="client-scopes.title">Client Scopes</h1>
+
+<div data-tour="client-scopes.filters">...</div>
+
+<div data-tour="client-scopes.actions">...</div>
+
+<table data-tour="client-scopes.table">...</table>
+
+<div data-tour="client-scopes.table.actions">...</div>
+
+<div data-tour="client-scopes.table.pagination">...</div>
+
+
+
+
+
+import { StepType } from "@reactour/tour";
+import { Title } from "@/components/tour/Title";
+import { Paragraph } from "@/components/tour/Paragraph";
+import { Footer } from "@/components/tour/Footer";
+import { EMOJIS } from "@/constants/emojis";
+
+export const clientScopesSteps: StepType[] = [
+  // INTRO
+  {
+    selector: "body",
+    content: () => (
+      <div>
+        <Title text={`${EMOJIS.scopes} Client Scopes`} />
+        <Paragraph
+          text={`
+Los Client Scopes son conjuntos de atributos y configuraciones que
+pueden añadirse a uno o varios clientes para ampliar la información
+que reciben durante la autenticación.
+          `}
+        />
+        <Footer text="Veamos cómo funciona esta sección." />
+      </div>
+    ),
+  },
+
+  // TITLE
+  {
+    selector: '[data-tour="client-scopes.title"]',
+    position: "bottom",
+    content: () => (
+      <div>
+        <Title text="Administración de Client Scopes" />
+        <Paragraph text="Aquí puedes ver, crear, editar y gestionar scopes utilizados por los clientes de la plataforma." />
+      </div>
+    ),
+  },
+
+  // FILTERS
+  {
+    selector: '[data-tour="client-scopes.filters"]',
+    position: "bottom",
+    content: () => (
+      <div>
+        <Title text="Filtros" />
+        <Paragraph text="Filtra los scopes por nombre y ajusta cuántos elementos ver por página." />
+      </div>
+    ),
+  },
+
+  // ACTIONS
+  {
+    selector: '[data-tour="client-scopes.actions"]',
+    position: "left",
+    content: () => (
+      <div>
+        <Title text="Crear nuevo Scope" />
+        <Paragraph
+          text={`
+Puedes crear un nuevo Client Scope.  
+Durante la creación deberás definir su nombre, descripción y protocolo.
+          `}
+        />
+        <Footer text="Algunos scopes pueden estar limitados por el protocolo." />
+      </div>
+    ),
+  },
+
+  // TABLE
+  {
+    selector: '[data-tour="client-scopes.table"]',
+    position: "top",
+    content: () => (
+      <div>
+        <Title text="Listado de Scopes" />
+        <Paragraph
+          text={`
+Cada fila representa un Client Scope disponible en la plataforma.
+Estos scopes pueden ser reutilizados por múltiples clientes.
+          `}
+        />
+      </div>
+    ),
+  },
+
+  // TABLE ACTIONS
+  {
+    selector: '[data-tour="client-scopes.table.actions"]',
+    position: "left",
+    content: () => (
+      <div>
+        <Title text="Acciones por Scope" />
+
+        <Paragraph
+          text={`
+• **Editar**: modifica nombre, descripción y configuración básica.  
+• **Mappers**: administra qué atributos o datos se incluyen dentro del scope.  
+• **Eliminar**: disponible solo para scopes creados por el usuario.
+          `}
+        />
+
+        <Footer text="Los mappers son claves para definir qué información viaja en el token." />
+      </div>
+    ),
+  },
+
+  // PAGINATION
+  {
+    selector: '[data-tour="client-scopes.table.pagination"]',
+    position: "top",
+    content: () => (
+      <div>
+        <Title text="Paginación" />
+        <Paragraph text="Usa los controles para navegar entre los scopes disponibles." />
+        <Footer text="Listo. Ya conoces la sección de Client Scopes." />
+      </div>
+    ),
+  },
+];
+
+```
