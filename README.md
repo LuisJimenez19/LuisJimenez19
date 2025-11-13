@@ -431,4 +431,21 @@ export const usersSteps: StepType[] = [
 <div data-tour="users.table.actions">...</div>
 
 <div data-tour="users.table.pagination">...</div>
+
+
+
+{
+  selector: "body",
+  content: () => (
+    <div>
+      <Title text="¿Quieres seguir explorando?" />
+      <Paragraph text="Puedes continuar con otras secciones del sistema para conocer todas las funcionalidades disponibles." />
+      <div className="flex flex-col mt-3 gap-2">
+        <Button onClick={() => tourStarters.groups()}>Tour de Grupos</Button>
+        <Button onClick={() => tourStarters.roles()}>Tour de Roles</Button>
+        <Button onClick={() => tourStarters.clients()}>Tour de Clientes</Button>
+      </div>
+    </div>
+  ),
+}
 ```
