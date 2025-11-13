@@ -42,3 +42,41 @@ LuisJimenez19/LuisJimenez19 is a ✨ special ✨ repository because its `README.
 You can click the Preview link to take a look at your changes.
 --->
 
+
+```
+import { setSteps, setIsOpen } from "@reactour/tour";
+import { usersSteps } from "./users.tour";
+import { groupsSteps } from "./groups.tour";
+import { rolesSteps } from "./roles.tour";
+import { clientsSteps } from "./clients.tour";
+import { clientScopesSteps } from "./clientScopes.tour";
+import { mappersSteps } from "./mappers.tour";
+
+export const tourStarters = {
+  users: () => {
+    setSteps(usersSteps);
+    setIsOpen(true);
+  },
+  groups: () => {
+    setSteps(groupsSteps);
+    setIsOpen(true);
+  },
+  roles: () => {
+    setSteps(rolesSteps);
+    setIsOpen(true);
+  },
+  clients: () => {
+    setSteps(clientsSteps);
+    setIsOpen(true);
+  },
+  clientScopes: () => {
+    setSteps(clientScopesSteps);
+    setIsOpen(true);
+  },
+  mappers: () => {
+    setSteps(mappersSteps);
+    setIsOpen(true);
+  },
+};
+
+```
