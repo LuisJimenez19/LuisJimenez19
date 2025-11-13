@@ -1189,3 +1189,152 @@ y pueden tener restricciones.
   },
 ];
 ```
+
+
+
+
+### credenciales
+
+```
+<h1 data-tour="credentials.title"></h1>
+
+<div data-tour="credentials.secret"></div>
+
+<button data-tour="credentials.secret.regenerate"></button>
+
+<div data-tour="credentials.flows"></div>
+
+<button data-tour="credentials.update"></button>
+
+
+
+
+
+import { StepType } from "@reactour/tour";
+import { Title } from "@/components/tour/Title";
+import { Paragraph } from "@/components/tour/Paragraph";
+import { Footer } from "@/components/tour/Footer";
+import { EMOJIS } from "@/constants/emojis";
+
+export const credentialsSteps: StepType[] = [
+  // INTRO
+  {
+    selector: "body",
+    content: () => (
+      <div>
+        <Title text={`${EMOJIS.lock} Credenciales del Cliente`} />
+        <Paragraph
+          text={`
+Aquí puedes administrar la información sensible relacionada a la autenticación
+del cliente, como su Client Secret y los flujos de autenticación permitidos.
+          `}
+        />
+        <Footer text="Vamos a ver cada parte en detalle." />
+      </div>
+    ),
+  },
+
+  // TITLE
+  {
+    selector: '[data-tour="credentials.title"]',
+    position: "bottom",
+    content: () => (
+      <div>
+        <Title text="Sección de Credenciales" />
+        <Paragraph
+          text={`
+Cada cliente tiene credenciales únicas que permiten validar su identidad
+al interactuar con otros servicios. Aquí puedes consultarlas y administrarlas.
+          `}
+        />
+      </div>
+    ),
+  },
+
+  // CLIENT SECRET
+  {
+    selector: '[data-tour="credentials.secret"]',
+    position: "right",
+    content: () => (
+      <div>
+        <Title text="Client Secret" />
+        <Paragraph
+          text={`
+El *Client Secret* es la clave privada que autentica al cliente
+cuando se comunica mediante flujos confidenciales.
+Tenla presente: es información sensible y debe mantenerse segura.
+          `}
+        />
+        <Footer text="Puedes ocultarla o visualizarla según lo necesites." />
+      </div>
+    ),
+  },
+
+  // REGENERATE
+  {
+    selector: '[data-tour="credentials.secret.regenerate"]',
+    position: "bottom",
+    content: () => (
+      <div>
+        <Title text="Regenerar Secret" />
+        <Paragraph
+          text={`
+Este botón genera un nuevo Client Secret.
+Es útil si crees que la clave fue comprometida o necesitas rotarla por seguridad.
+
+⚠ Recuerda: al regenerar, integraciones externas dejarán de funcionar
+hasta actualizar la clave en sus configuraciones.
+          `}
+        />
+        <Footer text="Úsalo solo cuando sea necesario." />
+      </div>
+    ),
+  },
+
+  // FLOWS
+  {
+    selector: '[data-tour="credentials.flows"]',
+    position: "left",
+    content: () => (
+      <div>
+        <Title text="Flujos de Autenticación" />
+        <Paragraph
+          text={`
+Aquí puedes habilitar o deshabilitar los flujos permitidos para este cliente.
+
+Cada flujo representa una forma distinta de cómo la aplicación puede obtener tokens:
+          
+• **Standard Flow** – Usado por aplicaciones web.  
+• **Implicit Flow** – Para apps SPA (legacy).  
+• **Direct Access Grants** – Permite que el usuario envíe credenciales directamente.  
+• **Service Account** – Credenciales para integración servidor-servidor.  
+• **Authorization Services** – Activa control de permisos avanzado.  
+• **Public Client** – El cliente no tiene secret; útil para SPAs o apps móviles.
+
+Dependiendo de la arquitectura, algunos flujos pueden no ser recomendados.
+          `}
+        />
+        <Footer text="Activa solo los flujos que tu aplicación necesite." />
+      </div>
+    ),
+  },
+
+  // UPDATE BUTTON
+  {
+    selector: '[data-tour="credentials.update"]',
+    position: "top",
+    content: () => (
+      <div>
+        <Title text="Guardar Cambios" />
+        <Paragraph
+          text={`
+Una vez configurados los flujos, debes aplicar los cambios desde este botón.
+De lo contrario, las nuevas reglas no tendrán efecto.
+          `}
+        />
+        <Footer text="¡Eso es todo! Ya conoces las credenciales de un cliente." />
+      </div>
+    ),
+  },
+];
+```
