@@ -309,3 +309,126 @@ selectores
 <footer data-tour="dashboard.footer">...</footer>
 
 ```
+
+
+users tour
+```
+import { StepType } from "@reactour/tour";
+import { Title } from "@/components/tour/Title";
+import { Paragraph } from "@/components/tour/Paragraph";
+import { Footer } from "@/components/tour/Footer";
+import { Button } from "@/components/ui/button";
+import { EMOJIS } from "@/constants/emojis";
+
+export const usersSteps: StepType[] = [
+  {
+    selector: "body",
+    content: () => (
+      <div>
+        <Title text={`${EMOJIS.users} Gestión de Usuarios`} />
+        <Paragraph text="En esta sección puedes administrar todas las cuentas del sistema: crear usuarios, editar información, modificar permisos y organizarlos en grupos." />
+        <Footer text="Veamos cada parte de esta pantalla." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="users.title"]',
+    position: "bottom",
+    content: () => (
+      <div>
+        <Title text="Título de la sección" />
+        <Paragraph text="Aquí siempre podrás ver en qué módulo te encuentras. En este caso, estás administrando usuarios." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="users.table.filters"]',
+    position: "bottom",
+    content: () => (
+      <div>
+        <Title text="Filtros y herramientas" />
+        <Paragraph text="Puedes buscar usuarios por nombre de usuario y ajustar cuántos resultados se muestran por página." />
+        <Footer text="Ideal para trabajar con listas largas." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="users.create"]',
+    position: "left",
+    content: () => (
+      <div>
+        <Title text="Crear un nuevo usuario" />
+        <Paragraph text="Aquí puedes añadir una nueva cuenta completando un formulario con información básica como nombre, apellido y correo electrónico." />
+        <Footer text="La creación rápida te permite mantener el control del sistema." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="users.addToGroup"]',
+    position: "left",
+    content: () => (
+      <div>
+        <Title text="Agregar usuarios a un grupo" />
+        <Paragraph text="Selecciona varios usuarios y asígnalos a un grupo. Es útil cuando administras grandes equipos o áreas." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="users.table"]',
+    position: "top",
+    content: () => (
+      <div>
+        <Title text="Lista de usuarios" />
+        <Paragraph text="Aquí ves todos los usuarios registrados, junto con su información principal: email, nombres, estado y roles asignados." />
+        <Footer text="Cada fila representa una cuenta del sistema." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="users.table.actions"]',
+    position: "left",
+    content: () => (
+      <div>
+        <Title text="Acciones disponibles" />
+        <Paragraph text="Desde aquí puedes editar datos del usuario, asignar roles, añadirlo a grupos, gestionar sus atributos e incluso cambiar su contraseña." />
+        <Footer text="Todo al alcance de un clic." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="users.table.pagination"]',
+    position: "top",
+    content: () => (
+      <div>
+        <Title text="Paginación" />
+        <Paragraph text="Navega entre las páginas de resultados. Esto es especialmente útil cuando administras cientos o miles de usuarios." />
+        <Footer text="Y listo. Con esto ya conoces la gestión de usuarios." />
+      </div>
+    ),
+  },
+];
+
+
+
+
+<h1 data-tour="users.title">Usuarios</h1>
+
+<div data-tour="users.table.filters">...</div>
+
+<button data-tour="users.create">Crear nuevo usuario</button>
+
+<button data-tour="users.addToGroup">Agregar a grupo</button>
+
+<table data-tour="users.table">...</table>
+
+<div data-tour="users.table.actions">...</div>
+
+<div data-tour="users.table.pagination">...</div>
+```
