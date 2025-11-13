@@ -724,3 +724,156 @@ export const clientsSteps: StepType[] = [
   ),
 }
 ```
+
+
+### roles
+
+
+```
+<h1 data-tour="roles.title">Roles</h1>
+
+<div data-tour="roles.roleTypeSelector">...</div>
+
+<div data-tour="roles.filters">...</div>
+
+<div data-tour="roles.actions">...</div>
+
+<table data-tour="roles.table">...</table>
+
+<div data-tour="roles.table.actions">...</div>
+
+<div data-tour="roles.table.pagination">...</div>
+
+
+
+
+
+import { StepType } from "@reactour/tour";
+import { Title } from "@/components/tour/Title";
+import { Paragraph } from "@/components/tour/Paragraph";
+import { Footer } from "@/components/tour/Footer";
+import { EMOJIS } from "@/constants/emojis";
+
+export const rolesSteps: StepType[] = [
+  {
+    selector: "body",
+    content: () => (
+      <div>
+        <Title text={`${EMOJIS.roles} Roles`} />
+        <Paragraph text="En esta sección puedes administrar los permisos disponibles dentro de la plataforma, tanto roles globales como roles asociados a clientes específicos." />
+        <Footer text="Primero veamos cómo está organizada la pantalla." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="roles.title"]',
+    position: "bottom",
+    content: () => (
+      <div>
+        <Title text="Administración de Roles" />
+        <Paragraph text="Aquí puedes gestionar los roles disponibles, organizarlos, editarlos y asignarlos a usuarios o grupos." />
+      </div>
+    ),
+  },
+
+  // SELECTOR GLOBAL / CLIENT
+  {
+    selector: '[data-tour="roles.roleTypeSelector"]',
+    position: "bottom",
+    content: () => (
+      <div>
+        <Title text="Tipos de Roles" />
+
+        <Paragraph
+          text={`
+Esta plataforma maneja dos tipos de roles:
+
+• **Roles Globales**: afectan a toda la plataforma.  
+• **Client Roles**: roles pertenecientes a una aplicación específica.
+
+Puedes alternar entre ellos usando este selector.
+        `}
+        />
+
+        <Footer text="Cambia entre vistas según lo que necesites administrar." />
+      </div>
+    ),
+  },
+
+  // FILTERS
+  {
+    selector: '[data-tour="roles.filters"]',
+    position: "bottom",
+    content: () => (
+      <div>
+        <Title text="Filtros" />
+        <Paragraph text="Filtra roles por nombre y ajusta la cantidad de filas a mostrar por página." />
+      </div>
+    ),
+  },
+
+  // ACTIONS
+  {
+    selector: '[data-tour="roles.actions"]',
+    position: "left",
+    content: () => (
+      <div>
+        <Title text="Acciones principales" />
+        <Paragraph text="Puedes crear nuevos roles globales, o asignar roles (globales o de cliente) a usuarios y grupos." />
+        <Footer text="Es una forma rápida de administrar permisos a gran escala." />
+      </div>
+    ),
+  },
+
+  // TABLE GENERAL
+  {
+    selector: '[data-tour="roles.table"]',
+    position: "top",
+    content: () => (
+      <div>
+        <Title text="Listado de Roles" />
+        <Paragraph text="Aquí verás todos los roles disponibles según la vista seleccionada (global o de cliente)." />
+      </div>
+    ),
+  },
+
+  // TABLE ACTIONS
+  {
+    selector: '[data-tour="roles.table.actions"]',
+    position: "left",
+    content: () => (
+      <div>
+        <Title text="Acciones por Rol" />
+
+        <Paragraph
+          text={`
+Cada rol tiene acciones específicas según su tipo:
+
+• **Editar**: cambia nombre o información del rol.  
+• **Usuarios**: asigna o quita este rol a usuarios.  
+• **Grupos**: asigna o quita este rol a grupos.  
+• **Eliminar**: solo para roles globales o roles de cliente creados por el usuario.
+          `}
+        />
+
+        <Footer text="Permite administrar permisos de manera detallada." />
+      </div>
+    ),
+  },
+
+  // PAGINATION
+  {
+    selector: '[data-tour="roles.table.pagination"]',
+    position: "top",
+    content: () => (
+      <div>
+        <Title text="Paginación" />
+        <Paragraph text="Navega entre páginas para ver todos los roles disponibles." />
+        <Footer text="Listo. Ya conoces la sección de Roles." />
+      </div>
+    ),
+  },
+];
+
+```
