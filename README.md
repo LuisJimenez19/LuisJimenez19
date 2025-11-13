@@ -449,3 +449,129 @@ export const usersSteps: StepType[] = [
   ),
 }
 ```
+
+
+
+###Grupos
+
+<h1 data-tour="groups.title">Grupos</h1>
+
+<div data-tour="groups.filters">...</div>
+
+<button data-tour="groups.create">Crear nuevo grupo</button>
+
+<table data-tour="groups.table">...</table>
+
+<div data-tour="groups.table.actions">...</div>
+
+<div data-tour="groups.table.pagination">...</div>
+
+
+
+
+
+
+import { StepType } from "@reactour/tour";
+import { Title } from "@/components/tour/Title";
+import { Paragraph } from "@/components/tour/Paragraph";
+import { Footer } from "@/components/tour/Footer";
+import { EMOJIS } from "@/constants/emojis";
+
+export const groupsSteps: StepType[] = [
+  {
+    selector: "body",
+    content: () => (
+      <div>
+        <Title text={`${EMOJIS.groups} Gestión de Grupos`} />
+        <Paragraph text="Aquí puedes crear y organizar grupos para estructurar usuarios según equipos, áreas o necesidades específicas." />
+        <Footer text="Vamos a recorrer cada parte de la pantalla." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="groups.title"]',
+    position: "bottom",
+    content: () => (
+      <div>
+        <Title text="Título de la sección" />
+        <Paragraph text="Esta es la vista principal para administrar los grupos existentes dentro de la plataforma." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="groups.filters"]',
+    position: "bottom",
+    content: () => (
+      <div>
+        <Title text="Filtros disponibles" />
+        <Paragraph text="Puedes buscar grupos por nombre y ajustar cuántos resultados ver por página. Perfecto para entornos con muchos equipos." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="groups.create"]',
+    position: "left",
+    content: () => (
+      <div>
+        <Title text="Crear nuevo grupo" />
+        <Paragraph text="Desde aquí puedes añadir un grupo completamente nuevo. Solo necesitas asignarle un nombre." />
+        <Footer text="Una forma rápida de estructurar mejor tus usuarios." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="groups.table"]',
+    position: "top",
+    content: () => (
+      <div>
+        <Title text="Listado de grupos" />
+        <Paragraph text="Aquí verás todos los grupos creados, junto con accesos directos para administrarlos: editar información, gestionar roles y explorar diagramas." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="groups.table.actions"]',
+    position: "left",
+    content: () => (
+      <div>
+        <Title text="Acciones disponibles" />
+        <Paragraph text="Cada grupo tiene accesos rápidos para editarlo, asignar roles globales, asignar roles de cliente, visualizar el diagrama y eliminar el grupo." />
+        <Footer text="Todas las herramientas de administración organizadas en un solo lugar." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="groups.table.pagination"]',
+    position: "top",
+    content: () => (
+      <div>
+        <Title text="Paginación" />
+        <Paragraph text="Controla la navegación entre páginas cuando tienes muchos grupos creados." />
+        <Footer text="Y listo, ya conoces la gestión de grupos." />
+      </div>
+    ),
+  },
+];
+
+
+
+{
+  selector: "body",
+  content: () => (
+    <div>
+      <Title text="¿Quieres continuar?" />
+      <Paragraph text="Puedes explorar los tours de otras secciones para entender el sistema por completo." />
+      <div className="flex flex-col mt-3 gap-2">
+        <Button onClick={() => tourStarters.users()}>Tour de Usuarios</Button>
+        <Button onClick={() => tourStarters.roles()}>Tour de Roles</Button>
+        <Button onClick={() => tourStarters.clients()}>Tour de Clientes</Button>
+      </div>
+    </div>
+  ),
+}
