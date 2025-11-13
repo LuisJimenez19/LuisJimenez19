@@ -580,3 +580,147 @@ export const groupsSteps: StepType[] = [
 
 
 ```
+
+
+### Clientes
+
+```
+
+<h1 data-tour="clients.title">Clientes</h1>
+
+<div data-tour="clients.filters">...</div>
+
+<div className="flex items-center gap-2" data-tour="clients.actions">
+  <button>Crear nuevo cliente</button>
+  <button>Client scopes</button> {/* o un link */}
+</div>
+
+<table data-tour="clients.table">...</table>
+
+<div data-tour="clients.table.actions">...</div>
+
+<div data-tour="clients.table.pagination">...</div>
+
+
+
+
+import { StepType } from "@reactour/tour";
+import { Title } from "@/components/tour/Title";
+import { Paragraph } from "@/components/tour/Paragraph";
+import { Footer } from "@/components/tour/Footer";
+import { EMOJIS } from "@/constants/emojis";
+
+export const clientsSteps: StepType[] = [
+  {
+    selector: "body",
+    content: () => (
+      <div>
+        <Title text={`${EMOJIS.clients} Gestión de Clientes`} />
+        <Paragraph text="Los clientes representan aplicaciones o servicios que se conectan a la plataforma y necesitan autenticación, permisos y reglas personalizadas." />
+        <Footer text="Veamos cómo administrar los clientes disponibles." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="clients.title"]',
+    position: "bottom",
+    content: () => (
+      <div>
+        <Title text="Página de Clientes" />
+        <Paragraph text="Aquí encontrarás todas las aplicaciones registradas dentro de la plataforma, junto con sus configuraciones más importantes." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="clients.filters"]',
+    position: "bottom",
+    content: () => (
+      <div>
+        <Title text="Filtros" />
+        <Paragraph text="Puedes buscar clientes por ID y ajustar el número de resultados para encontrar más rápido la aplicación que necesitas." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="clients.actions"]',
+    position: "left",
+    content: () => (
+      <div>
+        <Title text="Acciones principales" />
+        <Paragraph text="Desde aquí puedes crear un nuevo cliente o acceder al catálogo de Client Scopes disponibles en la plataforma." />
+        <Footer text="Ideal para administrar aplicaciones y sus permisos asociados." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="clients.table"]',
+    position: "top",
+    content: () => (
+      <div>
+        <Title text="Listado de Clientes" />
+        <Paragraph text="Cada fila representa una aplicación configurada. Puedes ver su estado, editarla y administrar roles, scopes, mappers y credenciales." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="clients.table.actions"]',
+    position: "left",
+    content: () => (
+      <div>
+        <Title text="Acciones por cliente" />
+
+        <Paragraph text="Cada cliente tiene acciones específicas:" />
+
+        <Paragraph
+          text={`
+• Editar: cambiar nombre, protocolo o configuraciones básicas.  
+• Roles: administrar los roles que la aplicación puede asignar.  
+• Scopes: definir qué información es accesible desde la app.  
+• Mappers: personalizar qué atributos se exponen al autenticarse.  
+• Diagramas: visualizar la estructura y conexiones del cliente.  
+• Credenciales: gestionar secretos y configuraciones de acceso.  
+• Eliminar: borrar el cliente de la plataforma.
+          `}
+        />
+
+        <Footer text="Todo lo necesario para administrar aplicaciones de forma segura y ordenada." />
+      </div>
+    ),
+  },
+
+  {
+    selector: '[data-tour="clients.table.pagination"]',
+    position: "top",
+    content: () => (
+      <div>
+        <Title text="Paginación" />
+        <Paragraph text="Navega entre las páginas para ver todos los clientes configurados." />
+        <Footer text="¡Listo! Ya conoces la sección de Clientes." />
+      </div>
+    ),
+  },
+];
+
+
+
+{
+  selector: "body",
+  content: () => (
+    <div>
+      <Title text="¿Quieres continuar con otro tour?" />
+      <Paragraph text="Puedes explorar otras secciones para conocer más sobre la plataforma." />
+      <div className="flex flex-col gap-2 mt-3">
+        <Button onClick={() => goToTour("users")}>Usuarios</Button>
+        <Button onClick={() => goToTour("groups")}>Grupos</Button>
+        <Button onClick={() => goToTour("roles")}>Roles</Button>
+        <Button onClick={() => goToTour("client-scopes")}>Client Scopes</Button>
+      </div>
+    </div>
+  ),
+}
+```
