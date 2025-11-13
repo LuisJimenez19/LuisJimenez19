@@ -454,6 +454,8 @@ export const usersSteps: StepType[] = [
 
 ###Grupos
 
+```
+
 <h1 data-tour="groups.title">Grupos</h1>
 
 <div data-tour="groups.filters">...</div>
@@ -575,3 +577,6 @@ export const groupsSteps: StepType[] = [
     </div>
   ),
 }
+
+
+```
