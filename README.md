@@ -1019,3 +1019,173 @@ Estos scopes pueden ser reutilizados por múltiples clientes.
 ];
 
 ```
+
+
+### Mappers
+
+```
+<h1 data-tour="mappers.title">Mappers</h1>
+
+<div data-tour="mappers.description"></div>
+
+<div data-tour="mappers.actions"></div>
+
+<table data-tour="mappers.table"></table>
+
+<div data-tour="mappers.table.actions"></div>
+
+<div data-tour="mappers.table.pagination"></div>
+
+
+
+
+
+
+import { StepType } from "@reactour/tour";
+import { Title } from "@/components/tour/Title";
+import { Paragraph } from "@/components/tour/Paragraph";
+import { Footer } from "@/components/tour/Footer";
+import { EMOJIS } from "@/constants/emojis";
+
+export const mappersSteps: StepType[] = [
+  // INTRO
+  {
+    selector: "body",
+    content: () => (
+      <div>
+        <Title text={`${EMOJIS.mappers} Mappers`} />
+        <Paragraph
+          text={`
+Los Mappers definen qué información del usuario o del sistema
+se incluye dentro del token generado durante la autenticación.
+          `}
+        />
+        <Footer text="Veamos cómo funciona esta sección." />
+      </div>
+    ),
+  },
+
+  // TITLE
+  {
+    selector: '[data-tour="mappers.title"]',
+    position: "bottom",
+    content: () => (
+      <div>
+        <Title text="Administración de Mappers" />
+        <Paragraph
+          text={`
+Aquí puedes crear, editar y eliminar mappers.  
+Cada mapper representa una regla que indica qué dato debe agregarse
+al token final.
+          `}
+        />
+      </div>
+    ),
+  },
+
+  // GENERAL DESCRIPTION (OPTIONAL)
+  {
+    selector: '[data-tour="mappers.description"]',
+    position: "bottom",
+    content: () => (
+      <div>
+        <Title text="¿Qué es un Mapper?" />
+
+        <Paragraph
+          text={`
+Un mapper define cómo un atributo debe transformarse o enviarse dentro
+de un token de autenticación.
+
+Existen distintos tipos de mappers, por ejemplo:
+
+• **Hardcoded**: agrega un valor fijo al token.  
+• **Usermodel Attribute**: toma un atributo del usuario y lo incluye.  
+• **Role List**: envía roles según configuración.  
+• **Protocol-specific**: depende del protocolo (SAML o OpenID Connect).
+          `}
+        />
+
+        <Footer text="El tipo de mapper influye en la configuración disponible." />
+      </div>
+    ),
+  },
+
+  // ACTIONS
+  {
+    selector: '[data-tour="mappers.actions"]',
+    position: "left",
+    content: () => (
+      <div>
+        <Title text="Crear nuevo Mapper" />
+        <Paragraph
+          text={`
+Puedes crear un mapper seleccionando:
+
+• Tipo de mapper  
+• Claim name  
+• Valor fijo o atributo del usuario  
+• A qué tokens debe añadirse (Access, ID, UserInfo)
+
+Ten presente que algunas opciones dependen del protocolo.
+          `}
+        />
+        <Footer text="Elige bien el tipo de mapper según lo que desees transmitir." />
+      </div>
+    ),
+  },
+
+  // TABLE
+  {
+    selector: '[data-tour="mappers.table"]',
+    position: "top",
+    content: () => (
+      <div>
+        <Title text="Listado de Mappers" />
+        <Paragraph
+          text={`
+Aquí puedes ver todos los mappers existentes para este Client o Client Scope.
+Cada fila muestra el nombre, la descripción y el tipo de mapper.
+          `}
+        />
+      </div>
+    ),
+  },
+
+  // TABLE ACTIONS
+  {
+    selector: '[data-tour="mappers.table.actions"]',
+    position: "left",
+    content: () => (
+      <div>
+        <Title text="Acciones por Mapper" />
+
+        <Paragraph
+          text={`
+• **Editar**: permite modificar el tipo, claim y configuración.  
+• **Eliminar**: borra definitivamente el mapper.  
+• **Ver configuración**: según tu interfaz, puede mostrar detalles adicionales.
+
+Ten en cuenta que algunos mappers vienen preconfigurados por el sistema
+y pueden tener restricciones.
+          `}
+        />
+
+        <Footer text="Usa estas acciones para ajustar cómo se construyen los tokens." />
+      </div>
+    ),
+  },
+
+  // PAGINATION
+  {
+    selector: '[data-tour="mappers.table.pagination"]',
+    position: "top",
+    content: () => (
+      <div>
+        <Title text="Paginación" />
+        <Paragraph text="Navega entre páginas para revisar todos los mappers asociados." />
+        <Footer text="Listo. Ya conoces la sección de Mappers." />
+      </div>
+    ),
+  },
+];
+```
