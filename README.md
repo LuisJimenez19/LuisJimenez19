@@ -1343,19 +1343,23 @@ De lo contrario, las nuevas reglas no tendrán efecto.
 ### versiones estables de radix primitive, para que no haya problemas con la anidación de componentes con overlay
 ```
 npm install \
-@radix-ui/react-alert-dialog@^1 \
-@radix-ui/react-avatar@^1 \
-@radix-ui/react-checkbox@^1 \
-@radix-ui/react-collapsible@^1 \
-@radix-ui/react-dialog@^1 \
-@radix-ui/react-dropdown-menu@^1 \
-@radix-ui/react-label@^1 \
-@radix-ui/react-popover@^1 \
-@radix-ui/react-scroll-area@^1 \
-@radix-ui/react-select@^1 \
-@radix-ui/react-separator@^1 \
-@radix-ui/react-tabs@^1 \
-@radix-ui/react-toast@^1 \
-@radix-ui/react-tooltip@^1
+npm install \
+@radix-ui/react-alert-dialog@latest \
+@radix-ui/react-avatar@latest \
+@radix-ui/react-checkbox@latest \
+@radix-ui/react-collapsible@latest \
+@radix-ui/react-dialog@latest \
+@radix-ui/react-dropdown-menu@latest \
+@radix-ui/react-hover-card@latest \
+@radix-ui/react-label@latest \
+@radix-ui/react-popover@latest \
+@radix-ui/react-scroll-area@latest \
+@radix-ui/react-select@latest \
+@radix-ui/react-separator@latest \
+@radix-ui/react-tabs@latest \
+@radix-ui/react-toast@latest \
+@radix-ui/react-tooltip@latest \
+@radix-ui/react-slot@latest
+
 
 ```
