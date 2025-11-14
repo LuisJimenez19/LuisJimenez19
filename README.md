@@ -1363,3 +1363,34 @@ npm install \
 
 
 ```
+
+⬆️La versión de arriba no sirve porque hay componente que no tienen versión 2 por lo tanto nunca van ha a ser compatibles. y hay componentes que no son compatibles con la version 19 de react, la solución, usar react 18 y los componentes en v1.
+
+```
+npm install react@18 react-dom@18
+```
+
+```
+npm install \
+@radix-ui/react-alert-dialog@^1 \
+@radix-ui/react-avatar@^1 \
+@radix-ui/react-checkbox@^1 \
+@radix-ui/react-collapsible@^1 \
+@radix-ui/react-dialog@^1 \
+@radix-ui/react-dropdown-menu@^1 \
+@radix-ui/react-hover-card@^1 \
+@radix-ui/react-label@^1 \
+@radix-ui/react-popover@^1 \
+@radix-ui/react-scroll-area@^1 \
+@radix-ui/react-select@^1 \
+@radix-ui/react-separator@^1 \
+@radix-ui/react-tabs@^1 \
+@radix-ui/react-toast@^1 \
+@radix-ui/react-tooltip@^1 \
+@radix-ui/react-slot@^1
+
+rm -rf node_modules package-lock.json
+npm install
+npm dedupe
+
+```
