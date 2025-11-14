@@ -1338,3 +1338,24 @@ De lo contrario, las nuevas reglas no tendrán efecto.
   },
 ];
 ```
+
+
+### versiones estables de radix primitive, para que no haya problemas con la anidación de componentes con overlay
+```
+npm install \
+@radix-ui/react-alert-dialog@^1 \
+@radix-ui/react-avatar@^1 \
+@radix-ui/react-checkbox@^1 \
+@radix-ui/react-collapsible@^1 \
+@radix-ui/react-dialog@^1 \
+@radix-ui/react-dropdown-menu@^1 \
+@radix-ui/react-label@^1 \
+@radix-ui/react-popover@^1 \
+@radix-ui/react-scroll-area@^1 \
+@radix-ui/react-select@^1 \
+@radix-ui/react-separator@^1 \
+@radix-ui/react-tabs@^1 \
+@radix-ui/react-toast@^1 \
+@radix-ui/react-tooltip@^1
+
+```
